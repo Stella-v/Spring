@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 在IoC容器启动时,自动由Spring实例化Apple对象,取名sweetApple放入到容器中 -->
+    <bean id="yellowCat" class="com.spring.ioc.entity.Cat">
+        <property name="name" value="花花"></property>
+        <property name="age" value="1"></property>
+    </bean>
+
+    <bean id="preyDog" class="com.spring.ioc.entity.Dog">
+        <property name="name" value="灰犬"></property>
+        <property name="age" value="4"></property>
+    </bean>
+
+    <bean id="shirt" class="com.spring.ioc.entity.Clothes">
+        <property name="color" value="红色"></property>
+        <property name="style" value="短裙"></property>
+    </bean>
+
+    <!--实体类关联-->
+    <bean id="person1" class="com.spring.ioc.entity.Person">
+        <property name="name" value="小红"></property>
+        <property name="clothes" ref="shirt"></property>
+    </bean>
+</beans>
